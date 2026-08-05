@@ -1,7 +1,17 @@
 aid: surge-therapeutics
 name: SURGE Therapeutics
-description: 'SURGE Therapeutics is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: 'SURGE Therapeutics is a clinical-stage biotechnology company based in Cambridge,
+  Massachusetts, developing intraoperative cancer immunotherapy. Founded on research from
+  Dr. Michael Goldberg''s laboratory at Harvard Medical School, the company''s SURGERx platform
+  is an injectable, biodegradable hydrogel placed directly at the site of surgical tumor
+  resection to provide extended, localized release of immunotherapy — addressing the
+  surgery-induced inflammation that suppresses the immune system and allows residual disease
+  to reawaken. Its lead program, SRG-514, completed Phase 1 dose escalation in breast cancer
+  patients undergoing surgery and is being prepared for a registrational trial, with an
+  additional IND cleared for a Phase 1/2a study in bladder cancer. SURGE has raised a $26M
+  Series A and a $32M Series B. It is a therapeutics developer, not a software company, and
+  publishes no developer program, API, or machine-readable interface.'
+image: https://surgetx.com/wp-content/uploads/2021/06/SURGE_No-Slogan-COLOUR-1024x279.png
 url: https://raw.githubusercontent.com/api-evangelist/surge-therapeutics/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +22,14 @@ created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
+- Biotechnology
+- Pharmaceuticals
+- Oncology
+- Immunotherapy
+- Drug Delivery
+- Clinical Stage
+- Health
+- Life Sciences
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,46 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/surge-therapeutics-domain-security.yml
 - type: Website
+  url: https://surgetx.com/
+- type: About
+  url: https://surgetx.com/science/
+- type: Team
+  url: https://surgetx.com/team/
+- type: News
+  url: https://surgetx.com/news/
+- type: Contact
+  url: https://surgetx.com/contacts/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/surge-therapeutics
+- type: SecondaryMarket
   url: https://forgeglobal.com/surge-therapeutics_stock/
+x-enrichment:
+  date: '2026-08-05'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    SURGE Therapeutics is a clinical-stage oncology drug developer whose entire web presence
+    is a five-page WordPress marketing site (home, science, news, team, contacts); the only
+    machine-readable endpoint on surgetx.com is WordPress core's default /wp-json CMS route
+    index, and api./developer./docs./portal.surgetx.com are all NXDOMAIN.
+  evidence:
+  - url: https://surgetx.com/openapi.json
+    status: 404
+  - url: https://surgetx.com/.well-known/agent-card.json
+    status: 404
+  - url: https://surgetx.com/.well-known/security.txt
+    status: 404
+  - url: https://surgetx.com/llms.txt
+    status: 404
+  - url: https://api.github.com/orgs/surgetx
+    status: 404
+  - url: https://surgetx.com/wp-json
+    status: 200
+  checked: '2026-08-05'
